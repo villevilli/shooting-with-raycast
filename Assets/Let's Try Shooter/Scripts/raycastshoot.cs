@@ -8,6 +8,8 @@ public class raycastshoot : MonoBehaviour {
     public float weapomrange = 100f;
     public float hitforce = 100f;
     public Transform gunend;
+    public GameController gameController;
+
 
     private Camera fpsCam;
     private WaitForSeconds shotduration = new WaitForSeconds(.07f);
@@ -29,7 +31,11 @@ public class raycastshoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetButtonDown ("Fire1") && Time.time > nextFire)
+        shoot();
+	}
+    private void shoot()
+    {
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + firerate;
 
@@ -39,7 +45,7 @@ public class raycastshoot : MonoBehaviour {
             RaycastHit hit;
 
             laserLine.SetPosition(0, gunend.position);
-            
+
 
             if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weapomrange))
             {
@@ -50,6 +56,7 @@ public class raycastshoot : MonoBehaviour {
                 if (health != null)
                 {
                     health.Damage(GunDamage);
+                    gameController.AddScore(10);
                 }
 
                 if (hit.rigidbody != null)
@@ -57,14 +64,13 @@ public class raycastshoot : MonoBehaviour {
                     hit.rigidbody.AddForce(-hit.normal * hitforce);
                 }
             }
-                else
+            else
             {
                 laserLine.SetPosition(1, rayOrigin + (fpsCam.transform.forward * weapomrange));
             }
         }
+    }
 
-    
-	}
     private IEnumerator ShotEffect ()
     {
         gunAudio.Play();
