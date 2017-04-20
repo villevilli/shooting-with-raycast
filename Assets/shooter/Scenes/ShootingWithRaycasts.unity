@@ -1558,6 +1558,8 @@ GameObject:
   m_Component:
   - component: {fileID: 915961321}
   - component: {fileID: 915961320}
+  - component: {fileID: 915961323}
+  - component: {fileID: 915961322}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1591,6 +1593,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915961322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c467362cf381a75428e866fa7804734a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &915961323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915961319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1661305c9dec97c428a6a74daa5e3715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneChanger: {fileID: 915961322}
 --- !u!4 &1051716045
 Transform:
   m_ObjectHideFlags: 0
@@ -3170,7 +3195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeaf3f6c541d9d40b40dcb903a9eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponRange: 50
 --- !u!120 &1505249020
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class raycastshoot : MonoBehaviour {
+
+public class RaycastShoot : MonoBehaviour {
     public int GunDamage = 1;
     public float firerate = .25f;
     public float weapomrange = 100f;

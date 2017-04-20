@@ -20,10 +20,7 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetKeyDown("r"))
-        {
-            restart();
-        }
+		
 
     }
     public void AddScore(int score)
@@ -38,6 +35,6 @@ public class GameController : MonoBehaviour {
     }
     public void restart()
     {
-        SceneManager.LoadScene("ShootingWithRaycast");
+        
     }
 }
